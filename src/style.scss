@@ -16,7 +16,7 @@
 
 :root {
   --background-color: #000;
-  --background-gradient-1: oklch(23.09% 0.0818 285.138);
+  --background-gradient-1: oklch(15.09% 0.0818 285.138);
   --background-gradient-2: oklch(25.767% 0.09939 308.408);
   --font-color: #e2e2e2;
 }
@@ -26,11 +26,14 @@ body {
   background:
     radial-gradient(circle at 100% 75%,
       var(--background-gradient-2),
-      oklch(from var(--background-gradient-2) 5% .2 290) 50%,
+      oklch(from var(--background-gradient-2) 2% .2 290) 50%,
       transparent), radial-gradient(circle at 0 25%,
       var(--background-gradient-1),
-      oklch(from var(--background-gradient-1) 5% .2 210) 50%,
+      oklch(from var(--background-gradient-1) 2% .2 210) 50%,
       transparent);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
   min-height: 100vh;
 }
@@ -42,6 +45,8 @@ main {
 .container {
   border-radius: 15px;
   border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color:  #FFFFFF10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #main-content {
@@ -57,7 +62,7 @@ main {
   padding: 20px;
 
   & h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 700;
   }
 
@@ -66,6 +71,7 @@ main {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: auto;
   }
 
   & .code-is-life {
@@ -76,7 +82,7 @@ main {
   & .about-me {
     margin-top: 1rem;
     text-wrap: balance;
-    max-width: 48rem;
+    max-width: 50dvw;
     font-size: 1.5rem;
     line-height: 1.6;
 
@@ -117,8 +123,8 @@ main {
     }
 
     & img {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
     }
   }
 
@@ -134,8 +140,8 @@ main {
       font-size: 1.5rem;
 
       & img {
-        width: 48px;
-        height: 48px;
+        width: 36px;
+        height: 36px;
       }
 
       & span {
