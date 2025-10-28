@@ -11,7 +11,6 @@ spec:
   maxReplicas: 10
   metrics:
     - type: Resource
-      name: cpu
       resource:
         name: cpu
         target:
