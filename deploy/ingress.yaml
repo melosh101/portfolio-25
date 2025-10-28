@@ -20,6 +20,6 @@ spec:
                 port:
                   number: 80
   tls:
-    - hosts:
+    - secretName: milasholsting-dk-tls
+      hosts:
         - milasholsting.dk
-      secretName: milasholsting-dk-tls

@@ -9,6 +9,10 @@ ENV NODE_ENV=production
 COPY . .
 RUN bun run build
 
-FROM docker.io/httpd:2.4
+FROM nginx:alpine
 
-COPY --from=builder /app/dist/ /usr/local/apache2/htdocs/
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/nginx.conf /etc/nginx/nginx.d/default.conf
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
